@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  host: hostname
+  username: username
+  password: password
+
+development:
+  <<: *default
+  database: btt_library_app_development
+
+test:
+  <<: *default
+  database: btt_library_app_test
+
+production:
+  <<: *default
+  database: btt_library_app_production
