@@ -20,6 +20,14 @@ module BttLibraryApp
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    if Rails.env.development? || Rails.env.test?
+      config.autoload_paths += %W(#{config.root}/lib/btt_library_app)
+    end
+
+    if Rails.env.production?
+      config.eager_load_paths += %W(#{config.root}/lib/btt_library_app)
+    end
+
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'

@@ -1,0 +1,7 @@
+<li class='<%= current_page.first? ? "disabled" : "" %>'>
+  <%=
+    link_to_unless(current_page.first?, t('views.pagination.previous').html_safe, url, remote: remote) do |name|
+      link_to(name, '#', remote: remote)
+    end
+  %>
+</li>

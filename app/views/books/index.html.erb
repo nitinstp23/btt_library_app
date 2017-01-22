@@ -1,0 +1,50 @@
+<% select_nav 'Books' %>
+
+<div id='page_content'>
+  <div class='page-header'>
+    <h2>
+      Books <%= link_to 'Add Book', new_book_url, class: 'btn btn-primary pull-right' %>
+    </h2>
+  </div>
+
+  <% if @books.present? %>
+    <div class='table-responsive'>
+      <table class='table table-striped'>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Available Copies</th>
+            <th>Updated At</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @books.each_with_index do |book, index| %>
+            <tr>
+              <td class='index'><%= index+1 %></td>
+              <td><%= book.title %></td>
+              <td><%= book.author %></td>
+              <td><%= book.isbn %></td>
+              <td><%= book.quantity %></td>
+              <td><%= book.updated_at.to_date_short %></td>
+              <td>
+                <%= link_to 'View', book_url(book.id) %>
+                | <%= link_to 'Edit', edit_book_url(book.id) %>
+                | <%= link_to 'Delete', book_url(book.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+              </td>
+           </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <%= paginate @books %>
+  <% else %>
+    <div class='text-muted'>No Books Found</div>
+  <% end %>
+</div>
+

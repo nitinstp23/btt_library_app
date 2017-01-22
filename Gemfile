@@ -7,6 +7,7 @@ gem 'uglifier', '~> 2.7.0'
 gem 'turbolinks'
 gem 'bcrypt', '~> 3.1.7' # required for ActiveModel#has_secure_password
 gem 'pg', '~> 0.19.0'
+gem 'kaminari', '~> 1.0.0'
 
 group :development do
   gem 'puma', '~> 3.6.2'
@@ -19,6 +20,7 @@ group :test do
   gem 'database_cleaner', '~> 1.5.3'
   gem 'simplecov', require: false
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'rails-controller-testing'
 end
 
 group :development, :test do

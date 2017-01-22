@@ -20,4 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  session:
+    authentication:
+      invalid: 'Invalid Email or Password'
+    flash_message:
+      sign_in: 'Please sign in with your email and password'
+      sign_out: 'Signed in successfully'
