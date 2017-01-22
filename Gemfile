@@ -5,8 +5,7 @@ gem 'jquery-rails', '~> 4.2.1'
 gem 'sass-rails', '~> 5.0.3'
 gem 'uglifier', '~> 2.7.0'
 gem 'turbolinks'
-# Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7' # required for ActiveModel#has_secure_password
 gem 'pg', '~> 0.19.0'
 
 group :development do
