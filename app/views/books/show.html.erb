@@ -1,0 +1,42 @@
+<% select_nav 'Books' %>
+
+<div id='page_content'>
+  <div class='page-header'>
+    <h2>
+      Book
+      <% if BookPolicy.new(current_user, @book).edit? %>
+        - <%= link_to 'Edit', edit_book_url(@book) %>
+      <% end %>
+    </h2>
+  </div>
+
+  <div class='page-body'>
+    <div class='row'>
+      <div class='col-md-6'>
+        <strong style='margin-right:10px;'>Title: </strong>
+        <%= @book.title %>
+      </div>
+    </div>
+
+    <div class='row'>
+      <div class='col-md-6'>
+        <strong style='margin-right:10px;'>Author: </strong>
+        <%= @book.author %>
+      </div>
+    </div>
+
+    <div class='row'>
+      <div class='col-md-6'>
+        <strong style='margin-right:10px;'>ISBN: </strong>
+        <%= @book.isbn %>
+      </div>
+    </div>
+
+    <div class='row'>
+      <div class='col-md-6'>
+        <strong style='margin-right:10px;'>Total Copies: </strong>
+        <%= @book.quantity %>
+      </div>
+    </div>
+  </div>
+</div>

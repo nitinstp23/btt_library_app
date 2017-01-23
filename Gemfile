@@ -8,6 +8,7 @@ gem 'turbolinks'
 gem 'bcrypt', '~> 3.1.7' # required for ActiveModel#has_secure_password
 gem 'pg', '~> 0.19.0'
 gem 'kaminari', '~> 1.0.0'
+gem 'pundit', '~> 1.1.0'
 
 group :development do
   gem 'puma', '~> 3.6.2'

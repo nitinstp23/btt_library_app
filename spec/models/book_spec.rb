@@ -10,7 +10,7 @@ RSpec.describe Book do
     it { is_expected.to validate_presence_of(:title) }
     it { is_expected.to validate_presence_of(:author) }
     it { is_expected.to validate_presence_of(:isbn) }
-    it { is_expected.to validate_numericality_of(:quantity).only_integer }
+    it { is_expected.to validate_numericality_of(:quantity).only_integer.is_greater_than(0) }
     it { is_expected.to validate_uniqueness_of(:isbn).ignoring_case_sensitivity }
 
     it { should have_many(:book_issues) }

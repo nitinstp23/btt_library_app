@@ -1,0 +1,22 @@
+<% select_nav 'Books' %>
+
+<div id='page_content'>
+  <div class='page-header'>
+    <h2>
+      New Book
+    </h2>
+  </div>
+
+  <div class='page-body'>
+    <%= form_for @book, url: books_url, html: {class: 'form-horizontal'} do |f| %>
+
+      <%= render partial: 'form', locals: { form: f, book: @book } %>
+
+      <div class='form-group'>
+        <div class='col-sm-offset-2 col-sm-4'>
+          <%= f.submit 'Create', class: 'btn btn-primary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

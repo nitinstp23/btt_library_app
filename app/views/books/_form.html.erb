@@ -1,0 +1,35 @@
+<% if form.object.errors[:base].present? %>
+  <%= render_flash_message(:alert, form.object.errors[:base].join('\n')) %>
+<% end %>
+
+<div class='form-group <%= error_class_for(form.object, :title) %>'>
+  <%= form.label :title, class: 'col-sm-2 control-label' %>
+  <div class='col-sm-4'>
+    <%= form.text_field :title, class: 'form-control', placeholder: 'Enter Title' %>
+    <%= error_messages_for(form.object, :title) %>
+  </div>
+</div>
+
+<div class='form-group <%= error_class_for(form.object, :author) %>'>
+  <%= form.label :author, class: 'col-sm-2 control-label' %>
+  <div class='col-sm-4'>
+    <%= form.text_field :author, class: 'form-control', placeholder: 'Enter Author Name' %>
+    <%= error_messages_for(form.object, :author) %>
+  </div>
+</div>
+
+<div class='form-group <%= error_class_for(form.object, :isbn) %>'>
+  <%= form.label :isbn, class: 'col-sm-2 control-label' %>
+  <div class='col-sm-4'>
+    <%= form.text_field :isbn, class: 'form-control', placeholder: 'Enter ISBN' %>
+    <%= error_messages_for(form.object, :isbn) %>
+  </div>
+</div>
+
+<div class='form-group <%= error_class_for(form.object, :quantity) %>'>
+  <%= form.label :quantity, class: 'col-sm-2 control-label' %>
+  <div class='col-sm-4'>
+    <%= form.number_field :quantity, class: 'form-control', placeholder: 'Enter Quantity', min: '0' %>
+    <%= error_messages_for(form.object, :quantity) %>
+  </div>
+</div>

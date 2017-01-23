@@ -3,7 +3,10 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  include Pundit
+
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+  rescue_from Pundit::NotAuthorizedError, with: :action_not_authorized
 
   protected
 
@@ -28,6 +31,10 @@ class ApplicationController < ActionController::Base
   def record_not_found(exception)
     @klass = exception.class
     render 'errors/not_found', layout: false
+  end
+
+  def action_not_authorized(exception)
+    render 'errors/forbidden', layout: false, status: :forbidden
   end
 
   helper_method :current_user

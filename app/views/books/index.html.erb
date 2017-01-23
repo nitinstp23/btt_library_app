@@ -3,7 +3,10 @@
 <div id='page_content'>
   <div class='page-header'>
     <h2>
-      Books <%= link_to 'Add Book', new_book_url, class: 'btn btn-primary pull-right' %>
+      Books
+        <% if BookPolicy.new(current_user, @book).new? %>
+          <%= link_to 'Add Book', new_book_url, class: 'btn btn-primary pull-right' %>
+        <% end %>
     </h2>
   </div>
 
@@ -16,7 +19,7 @@
             <th>Title</th>
             <th>Author</th>
             <th>ISBN</th>
-            <th>Available Copies</th>
+            <th>Total Copies</th>
             <th>Updated At</th>
             <th>Actions</th>
           </tr>

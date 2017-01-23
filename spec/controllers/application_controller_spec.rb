@@ -16,6 +16,19 @@ RSpec.describe ApplicationController do
         expect(response).to render_template('errors/not_found')
       end
     end
+
+    describe 'Pundit::NotAuthorizedError' do
+      controller do
+        def index
+          raise Pundit::NotAuthorizedError
+        end
+      end
+
+      it 'renders errors/forbidden template' do
+        get :index
+        expect(response).to render_template('errors/forbidden')
+      end
+    end
   end
 
   describe '#authenticate' do
