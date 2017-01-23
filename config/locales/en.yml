@@ -8,3 +8,6 @@ en:
   book:
     quantity:
       less_than_issued_error: 'Quantity cannot be less than existing book issues'
+    allocations:
+      invalid_user: 'user not found'
+      duplicate: 'has already been allocated'

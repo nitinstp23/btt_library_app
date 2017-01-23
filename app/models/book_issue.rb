@@ -4,7 +4,6 @@ class BookIssue < ApplicationRecord
   belongs_to :consumer
 
   validates :book, :consumer, :issued_at, presence: true
-  validates_uniqueness_of :book_id, scope: :consumer_id
 
   before_save :set_due_date
 

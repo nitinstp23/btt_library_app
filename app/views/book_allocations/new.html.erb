@@ -1,0 +1,32 @@
+<% select_nav 'Books' %>
+
+<div id='page_content'>
+  <div class='page-header'>
+    <h2>
+      New Book Allocation - <%= @book.title %>
+    </h2>
+  </div>
+
+  <div class='page-body'>
+    <%= form_for @book_allocation, url: book_book_allocations_url(@book), html: {class: 'form-horizontal'} do |f| %>
+
+      <% if f.object.errors[:base].present? %>
+        <%= render_flash_message(:alert, f.object.errors[:base].join('\n')) %>
+      <% end %>
+
+      <div class='form-group <%= error_class_for(f.object, :consumer_email) %>'>
+        <%= f.label :consumer_email, class: 'col-sm-2 control-label' %>
+        <div class='col-sm-4'>
+          <%= f.text_field :consumer_email, class: 'form-control', placeholder: 'Enter Consumer Email' %>
+          <%= error_messages_for(f.object, :consumer_email) %>
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <div class='col-sm-offset-2 col-sm-4'>
+          <%= f.submit 'Create', class: 'btn btn-primary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

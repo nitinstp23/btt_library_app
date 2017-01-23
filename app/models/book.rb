@@ -8,6 +8,10 @@ class Book < ApplicationRecord
 
   before_save :upcase_isbn
 
+  def availability
+    self.quantity - self.available_copies
+  end
+
   private
 
   def upcase_isbn

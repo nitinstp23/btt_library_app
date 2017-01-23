@@ -29,4 +29,17 @@ RSpec.describe Book do
     end
   end
 
+  describe '#availability' do
+    it 'returns available books count' do
+      book = create(:book, quantity: 5)
+
+      expect(book.availability).to eq(5)
+
+      book.update(available_copies: 3)
+      book.reload
+
+      expect(book.availability).to eq(2)
+    end
+  end
+
 end

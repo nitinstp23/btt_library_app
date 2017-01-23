@@ -6,6 +6,7 @@
       Book
       <% if BookPolicy.new(current_user, @book).edit? %>
         - <%= link_to 'Edit', edit_book_url(@book) %>
+        - <%= link_to 'Allocate', new_book_book_allocation_url(@book) %>
       <% end %>
     </h2>
   </div>
@@ -36,6 +37,13 @@
       <div class='col-md-6'>
         <strong style='margin-right:10px;'>Total Copies: </strong>
         <%= @book.quantity %>
+      </div>
+    </div>
+
+    <div class='row'>
+      <div class='col-md-6'>
+        <strong style='margin-right:10px;'>Available Copies: </strong>
+        <%= @book.availability %>
       </div>
     </div>
   </div>

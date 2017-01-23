@@ -20,6 +20,7 @@
             <th>Author</th>
             <th>ISBN</th>
             <th>Total Copies</th>
+            <th>Available Copies</th>
             <th>Updated At</th>
             <th>Actions</th>
           </tr>
@@ -33,6 +34,7 @@
               <td><%= book.author %></td>
               <td><%= book.isbn %></td>
               <td><%= book.quantity %></td>
+              <td><%= book.availability %></td>
               <td><%= book.updated_at.to_date_short %></td>
               <td>
                 <%= link_to 'View', book_url(book.id) %>
