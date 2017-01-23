@@ -13,6 +13,8 @@ RSpec.describe Consumer do
     it { is_expected.to validate_uniqueness_of(:email) }
     it { should allow_value('test@email.com').for(:email) }
     it { is_expected.to validate_length_of(:password).is_at_least(8) }
+
+    it { should have_many(:book_issues) }
   end
 
 end

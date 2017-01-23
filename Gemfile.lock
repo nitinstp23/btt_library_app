@@ -164,6 +164,7 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.5)
     tilt (2.0.5)
+    timecop (0.8.1)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.0)
@@ -196,6 +197,7 @@ DEPENDENCIES
   shoulda-matchers (~> 3.1)
   simplecov
   spring
+  timecop
   turbolinks
   uglifier (~> 2.7.0)
 

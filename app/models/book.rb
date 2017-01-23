@@ -4,6 +4,8 @@ class Book < ApplicationRecord
   validates :isbn, presence: true, uniqueness: { case_sensitive: false }
   validates :quantity, numericality: { only_integer: true }
 
+  has_many :book_issues
+
   before_save :upcase_isbn
 
   private

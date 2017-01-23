@@ -21,6 +21,7 @@ group :test do
   gem 'simplecov', require: false
   gem 'shoulda-matchers', '~> 3.1'
   gem 'rails-controller-testing'
+  gem 'timecop'
 end
 
 group :development, :test do

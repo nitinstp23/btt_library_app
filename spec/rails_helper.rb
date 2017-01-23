@@ -8,10 +8,12 @@ require 'rspec/rails'
 require 'database_cleaner'
 require 'simplecov'
 
-SimpleCov.start do
-  add_filter '/config/'
-  add_filter '/vendor/'
-  add_filter '/app/validators'
+if ENV['COVERAGE'] == '1'
+  SimpleCov.start do
+    add_filter '/config/'
+    add_filter '/vendor/'
+    add_filter '/app/validators'
+  end
 end
 
 # Add additional requires below this line. Rails is not loaded until this point!
